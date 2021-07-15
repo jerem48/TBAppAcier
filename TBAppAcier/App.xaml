@@ -1,0 +1,347 @@
+﻿<Application x:Class="TBAppAcier.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TBAppAcier"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <!--#region Border Style-->
+        <Style x:Key="borderCanvas" TargetType="Border">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="6"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="WindowBorder" TargetType="Border">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <Style x:Key="StackPanelBorder" TargetType="Border">
+            <Setter Property="BorderThickness" Value="0.7"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+
+        <!--#endregion-->
+
+
+        <!--#region Style for StackPanel-->
+
+        <Style x:Key="InputStackPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="4"/>
+
+        </Style>
+
+
+        <Style x:Key="MediumStackPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="6"/>
+
+        </Style>
+
+
+        <Style x:Key="diagrammeStackPanel" TargetType="StackPanel">
+            <Setter Property="Margin" Value="20"/>
+
+        </Style>
+        
+        
+        <Style x:Key="GlobalStackPanel" TargetType="StackPanel">
+
+            <Setter Property="Margin" Value="25"/>
+
+        </Style>
+
+        <!--#endregion-->
+
+
+
+
+        <!--#region Style for Grid-->
+
+        <Style x:Key="DrawingGrid" TargetType="Grid">
+            <Setter Property="Margin" Value="10"/>
+
+        </Style>
+
+        
+
+        <Style x:Key="CenterGrid" TargetType="Grid">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+
+        </Style>
+
+
+        <!--#endregion-->
+
+
+
+
+
+        <!--#region Buttons -->
+
+        <Style x:Key="ShortcutsButtons" TargetType="Button">
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="2.5"/>
+        </Style>
+
+
+        <Style x:Key="TreeViewButtons" TargetType="Button">
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+        <Style x:Key="InteractionsButtons" TargetType="Button">
+            <Setter Property="MinWidth" Value="20"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="3.5"/>
+        </Style>
+
+
+        <Style x:Key="SmallInteractionsButtons" TargetType="Button">
+            <Setter Property="MinWidth" Value="5"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="1"/>
+        </Style>
+
+
+        <!--#endregion-->
+
+
+
+
+
+
+
+        <!--#region Combobox-->
+
+        <Style x:Key="StyleComboBoxInput" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="MinWidth" Value="130"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="StyleComboBoxCanvas" TargetType="ComboBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="2"/>
+
+
+        </Style>
+
+
+        <Style x:Key="StyleForComboBox" TargetType="TextBlock">
+            <Setter Property= "VerticalAlignment" Value="Center"/>
+
+            <Setter Property="Margin" Value="0 5"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+
+        <!--#endregion-->
+
+
+        <!--#region Checkbox-->
+
+        <Style x:Key="StyleCheckBoxInput" TargetType="CheckBox">
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+
+
+        </Style>
+
+
+
+        <!--#endregion-->
+
+
+
+
+        <!--#region GroupBox-->
+        <Style x:Key="TitleStyleGroupeBox" TargetType="GroupBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="left" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Red"/>
+            <Setter Property="MinHeight" Value="150"/>
+            <Setter Property="MinWidth" Value="350"/>
+
+        </Style>
+
+        <!--#endregion-->
+
+        <!--#region ListBox-->
+        <Style x:Key="TitleStyleListBox" TargetType="ListBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Red"/>
+            <Setter Property="MinHeight" Value="150"/>
+            <Setter Property="MinWidth" Value="350"/>
+            <Setter Property="Margin" Value="5"/>
+
+        </Style>
+
+
+
+        <!--#endregion-->
+
+
+        <!--#region Title-->
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="Peru" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Margin" Value="0 10 0 20"/>
+        </Style>
+
+
+        <Style x:Key="HighTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+
+
+        <Style x:Key="MediumTitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+        <Style x:Key="MediumTitleStyleForSmallWindow" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="0 5 0 20"/>
+        </Style>
+
+        <Style x:Key="SmallTitleStyle" TargetType="TextBlock">
+
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="DimGray" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
+
+        <Style x:Key="TextStyleTextBlock" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#333333"/>
+
+        </Style>
+
+        <!--#endregion-->
+
+
+        <!--#region Read Only-->
+
+        <Style x:Key="TextBlockReadOnly" TargetType="TextBlock">
+            
+            <Setter Property="Background" Value="#eee"/>
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="MinWidth" Value="130"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+
+
+        </Style>
+
+
+        <Style x:Key="StyleForTextTextBlockReadOnly" TargetType="TextBlock">
+            <Setter Property= "VerticalAlignment" Value="Center"/>
+
+            <Setter Property="Margin" Value="0 5"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+
+
+        <!--#endregion-->
+
+
+        <!--#region Style for Input value-->
+        <Style x:Key="TextBoxInput" TargetType="TextBox">
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="MinWidth" Value="130"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+
+        </Style>
+
+
+        <Style x:Key="TextBoxGeneralInfosInput" TargetType="TextBox">
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="MinWidth" Value="100"/>
+        </Style>
+
+        <Style x:Key="StyleForTextBlockInput" TargetType="TextBlock">
+            <Setter Property= "VerticalAlignment" Value="Center"/>
+
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+
+            <Setter Property="Height" Value="25"/>
+
+        </Style>
+
+        <!--#endregion-->
+
+        <!--#region Hyperlink style for Textblock-->
+        <Style x:Key="HyperlinkTextBlock" TargetType="TextBlock">
+            <Setter Property="Margin" Value="5 5"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth" Value="100"/>
+        </Style>
+
+
+
+        <!--#endregion-->
+
+
+
+
+
+
+
+
+
+    </Application.Resources>
+</Application>

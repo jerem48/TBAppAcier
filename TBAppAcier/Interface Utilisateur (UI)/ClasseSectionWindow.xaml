@@ -1,0 +1,609 @@
+﻿<Window x:Class="TBAppAcier.Interface_Utilisateur__UI_.ClasseSectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TBAppAcier.Interface_Utilisateur__UI_"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Classe de section" Height="900" Width="1500">
+    <Border  Style="{Binding Source={StaticResource WindowBorder}}">
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <StackPanel Style="{Binding Source={StaticResource GlobalStackPanel}}">
+
+                <TextBlock Text="Classe de section" Style="{Binding Source={StaticResource TitleStyle}}"/>
+
+
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+
+
+
+
+                    <!--#region Liste des profilés disponibles-->
+                    <StackPanel
+                    Grid.Column="0">
+
+
+
+                        <TextBlock Text="Liste des profilés disponibles" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+                        <ListBox  
+                            Style="{Binding Source={StaticResource TitleStyleListBox}}"
+                            x:Name ="ListBox_Profile"
+                            Grid.Column="1"
+                            ScrollViewer.VerticalScrollBarVisibility ="Visible"
+                            SelectionChanged="ListBox_Profile_SelectionChanged"
+                            Height="200"
+                            >
+
+
+
+                        </ListBox>
+
+
+
+
+
+
+
+
+                    </StackPanel>
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+                    <!--#region Valeurs intermédiaires Elancement de l'âme classe 1 ou2-->
+
+
+                    <StackPanel Grid.Column="0" Grid.Row="1" x:Name="StackPanelAmeClasse1ou2" Visibility="Collapsed">
+
+                        <TextBlock Text="Elancement de l'âme, Classe 1 ou 2" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Hauteur comprimée âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Part comprimée de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement limite de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement effectif de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_HauteurComprimeeAmeClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_PartComprimeeAmeClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementLimiteAmeClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ElancementEffectifAmeClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                        <Run Text="[mm]" />
+                                </TextBlock>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+                    <!--#region Valeurs intermédiaires Elancement de l'âme classe 3-->
+
+
+                    <StackPanel Grid.Column="0" Grid.Row="1" x:Name="StackPanelAmeClasse3" Visibility="Collapsed">
+
+                        <TextBlock Text="Elancement de l'âme, Classe 3" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Contrainte σx supérieure" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte σx inférieure" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Valeur intermédiaire ψ de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement limite de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement effectif de l'âme" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_ContrainteSigmaXSupClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteSigmaXInfClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_PsiAmeClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementLimiteAmeClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ElancementEffectifAmeClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+                    <!--#region Caractéristique profilé-->
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+
+                        
+
+
+                        <TextBlock Text="Caractéristique du profilé" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Résistance" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Type de profilé" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_Resistance" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_TypeProfile" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="" />
+                                </TextBlock>
+
+                                <TextBlock Text="" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+                        
+
+
+                        <!-- Moments My calculé-->
+
+                        <TextBlock Text="Efforts maximaux en valeur absolue" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Effort normal Ned" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment Myed" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment Mzed" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_EffortNormal" Style="{Binding Source={StaticResource TextBlockReadOnly}}" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="textBox_MomentAxeY" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_MomentAxeZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="[kN]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+                      
+
+                    </StackPanel>
+
+                    <!--#endregion-->
+
+
+                    <!--#region Valeurs intermédiaires Elancement de l'aile classe 1 ou 2-->
+
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" x:Name="StackPanelAileClasse1ou2" Visibility="Collapsed">
+
+                        <TextBlock Text="Elancement de l'aile, Classe 1 ou 2" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Largeur comprimée de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Part comprimée de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement limite de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement effectif de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_LargeurComprimeeAileClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_PartComprimeeAileClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementLimiteAileClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ElancementEffectifAileClasse12" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                        <Run Text="[mm]" />
+                                </TextBlock>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+                    <!--#region Valeurs intermédiaires Elancement de l'aile classe 3-->
+
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" x:Name="StackPanelAileClasse3" Visibility="Collapsed">
+
+                        <TextBlock Text="Elancement de l'aile, Classe 3" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Contrainte σx extérieure" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte σx itnérieure" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Valeur intermédiaire ψ de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Valeur intermédiaire k1 ou k2 de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement limite de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement effectif de l'aile" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_ContrainteSigmaXExtClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteSigmaXIntClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_PsiAileClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_K1AileClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementLimiteAileClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ElancementEffectifAileClasse3" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+                    <!--#region Possiblement diagrammes de contraintes-->
+
+                    <StackPanel Grid.Column="2" x:Name="StackPanel_ContraintesElastiques" Visibility="Collapsed">
+
+                        <TextBlock Text="Diagrammes des contraintes élastiques (Possiblement)" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+                    <!--#region Possiblement diagrammes de contraintes-->
+
+                    <StackPanel Grid.Column="2" Grid.Row="1"  x:Name="StackPanel_ClasseSection" Visibility="Collapsed">
+
+                        <TextBlock Text="Classe de section du profilé" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Classe de section calculée" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_ClasseSectionCalculee" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+
+
+
+
+
+                        </Grid>
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+                <!--#region Interactions Buttons-->
+
+
+                <Grid
+                Style="{Binding Source={StaticResource CenterGrid}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+
+
+
+                    <!-- Affiche le diagramme des efforts internes-->
+                    <StackPanel Grid.Column="0">
+
+                        <Button Content="Afficher Résultats"
+                            x:Name="AfficheDiagrammeButton"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="AfficheDiagrammeButton_Click"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+
+                        <Button Content="Fermer" 
+                            x:Name="ShutDowmThis"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="ShutDowmThis_Click"/>
+ 
+                    </StackPanel>
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+
+
+
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Border>
+</Window>

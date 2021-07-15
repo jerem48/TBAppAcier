@@ -1,0 +1,55 @@
+﻿<Window x:Class="TBAppAcier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TBAppAcier"
+        mc:Ignorable="d"
+        Title="TBAppAcier" Height="450" Width="800">
+    <Border Padding="10">
+        <!-- Menu-->
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1">
+                    <Menu>
+                        <MenuItem Header="Données" Margin="5 0">
+
+                            <MenuItem x:Name="DiagrammeWindow" Header="Charges et efforts appliqués" Click="DiagrammeWindow_Click"/>
+                            <MenuItem x:Name="Profiles" Header="Caractéristiques du profilé" Click="Profiles_Click"/>
+
+                        </MenuItem>
+
+                    </Menu>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2">
+                    <Menu>
+                        <MenuItem Header="Résultats" Margin="5 0">
+
+                            <MenuItem x:Name="menuItem_ClasseSection" Header="Classe section" Click="menuItem_ClasseSection_Click"/>
+                            <MenuItem x:Name="menuItem_Flambage" Header="Flambage centré" Click="menuItem_Flambage_Click"/>
+                            <MenuItem x:Name="menuItem_EffortTranchantMoments" Header="Resistances en section" Click="menuItem_EffortTranchantMoments_Click"/>
+                            <MenuItem x:Name="menuItem_MomentsDeversement" Header="Moment de déversement" Click="menuItem_MomentsDeversement_Click"/>
+                            <MenuItem x:Name="menuItem_StabiliteResistanceSection" Header="Stabilité" Click="menuItem_StabiliteResistanceSection_Click"/>
+                            <MenuItem x:Name="menuItem_Synthese" Header="Synthèse" Click="menuItem_Synthese_Click"/>
+                        </MenuItem>
+
+                    </Menu>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+
+
+
+    </Border>
+</Window>

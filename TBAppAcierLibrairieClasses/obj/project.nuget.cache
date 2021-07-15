@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "vze6+SwUZyDldNs2uOhlGBeDOzHoLhIV4Q0tCrqQPWd2DK69vRN13SQzn1D03lZ6TpOqSMA7bOmjmjHMtrR/7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pc\\OneDrive - HESSO\\0. A télécharger régulièrement\\Heia\\Travail de Bachelor\\03 - Programmierung\\WPF\\TBAppAcier\\TBAppAcierLibrairieClasses\\TBAppAcierLibrairieClasses.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

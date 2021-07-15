@@ -1,0 +1,8 @@
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\bin\Release\netstandard2.0\TBAppAcierLibrairieClasses.deps.json
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\bin\Release\netstandard2.0\TBAppAcierLibrairieClasses.dll
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\bin\Release\netstandard2.0\TBAppAcierLibrairieClasses.pdb
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\obj\Release\netstandard2.0\TBAppAcierLibrairieClasses.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\obj\Release\netstandard2.0\TBAppAcierLibrairieClasses.AssemblyInfo.cs
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\obj\Release\netstandard2.0\TBAppAcierLibrairieClasses.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\obj\Release\netstandard2.0\TBAppAcierLibrairieClasses.dll
+C:\Users\pc\OneDrive - HESSO\0. A télécharger régulièrement\Heia\Travail de Bachelor\03 - Programmierung\WPF\TBAppAcier\TBAppAcierLibrairieClasses\obj\Release\netstandard2.0\TBAppAcierLibrairieClasses.pdb

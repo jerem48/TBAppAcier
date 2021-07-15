@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>false</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Interface Utilisateur %28UI%29\ResistanceBaseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Interface Utilisateur %28UI%29\StabiliteResistanceSectionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Interface Utilisateur %28UI%29\SyntheseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Interface Utilisateur (UI)\FlambageWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Interface Utilisateur (UI)\ClasseSectionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Interface Utilisateur %28UI%29\MomentDeversement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Interface Utilisateur %28UI%29\ResistanceBaseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Interface Utilisateur %28UI%29\StabiliteResistanceSectionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Interface Utilisateur %28UI%29\SyntheseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Interface Utilisateur (UI)\FlambageWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Interface Utilisateur (UI)\ClasseSectionWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,1010 @@
+﻿<Window x:Class="TBAppAcier.Interface_Utilisateur__UI_.MomentDeversement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TBAppAcier.Interface_Utilisateur__UI_"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Moment de déversement" Height="800" Width="1200">
+    <Border  Style="{Binding Source={StaticResource WindowBorder}}">
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <StackPanel Style="{Binding Source={StaticResource GlobalStackPanel}}">
+
+                <TextBlock Text="Moment de déversement" Style="{Binding Source={StaticResource TitleStyle}}"/>
+
+
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+
+
+
+
+                    <!--#region Liste des profilés disponibles-->
+                    <StackPanel
+                    Grid.Column="0">
+
+
+
+                        <TextBlock Text="Liste des profilés disponibles" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+                        <ListBox  
+                            Style="{Binding Source={StaticResource TitleStyleListBox}}"
+                            x:Name ="ListBox_Profile"
+                            Grid.Column="1"
+                            ScrollViewer.VerticalScrollBarVisibility ="Visible"
+                            SelectionChanged="ListBox_Profile_SelectionChanged"
+                            Height="200"
+                            >
+
+
+
+                        </ListBox>
+
+
+
+
+
+
+
+
+                    </StackPanel>
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+
+
+
+                    <!--#region Moment de déversement réel-->
+
+
+                    <StackPanel x:Name="stackPanel_CTICMReal" Grid.Column="0" Grid.Row="1" Visibility="Collapsed">
+
+                        <TextBlock Text="Moment de déversement réel minimum selon CTICM" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+    
+                        <!-- Caractéristique indicatives et statiques-->
+                        <TextBlock Text="Caractéristiques indicative statiques" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur critique de déversement Lcr (indicative)" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_LongueurCritiqueDeversement" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteO" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteE" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- Coefficients C1 et C2-->
+
+                        <TextBlock Text="Coefficients C1 et C2" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rapport des moments d'extrêmité ψ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Rapport du moment isostatique et du moment d'extrêmité maximum μ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient du type de charge C1" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient du positionnement de la charge C2" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RapportMomentExtremite" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_RapportMomentIsoMomentExtremiteMax" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_CoefficientTypeChargeC1" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_CoefficientPositionnementChargeC2" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Moment critique de déversement Mcr" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement réduit λDmoy " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de résuction χD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de déversement MDRd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_MomentCritiqueDeversement" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementReduit" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_FacteurReduction" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_MomentDeversement" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+                    </StackPanel>
+
+                    
+                    
+                    <StackPanel x:Name="stackPanel_SIAReal" Grid.Column="0" Grid.Row="1" Visibility="Collapsed">
+
+                        <TextBlock Text="Moment de déversement réel minimum selon SIA 263" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+                        <!-- Caractéristique indicatives et statiques-->
+                        <TextBlock Text="Caractéristiques indicative statiques" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur critique de déversement Lcr (indicative)" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_LongueurCritiqueDeversementSIA" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteOSIA" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteESIA" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- Coefficients η-->
+
+                        <TextBlock Text="Coefficients η" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rapport des moments d'extrêmité ψ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient η" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RapportMomentExtremiteSIA" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_CoefficientTypeChargeEta" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment critique de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rayon de giration de la membrure comprimée iD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte de torsion uniforme σDv " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte de torsion non-uniforme σDw" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte critique de déversement σcrD " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment critique de déversement Mcr " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RayonGirationMembrureComprimee" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteTorsionUniforme" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ContrainteTorsionNonUniforme" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteCritiqueDeversement" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentCritiqueDeversementSIA" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[mm]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[N/mm&#x00B2;]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[N/mm&#x00B2;]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Elancement réduit λDmoy " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de résuction χD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de déversement MDRd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_ElancementReduitΣΙΑ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_FacteurReductionΣΙΑ" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_MomentDeversementΣΙΑ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+                    </StackPanel>
+
+
+
+                    <!--#endregion-->
+
+
+
+
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+
+
+
+                        <TextBlock Text="Caractéristique du profilé" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Résistance" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Type de profilé" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_Resistance" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_TypeProfile" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="" />
+                                </TextBlock>
+
+                                <TextBlock Text="" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- My, Mz et Vz calculés-->
+
+                        <TextBlock Text="Efforts maximaux en valeur absolue" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Moment flexionnel Myed" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_MomentFlexionnelY" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                    </StackPanel>
+
+
+
+
+
+
+
+
+                    <!--#region Moment de déversement Min-->
+                    
+                    
+                    <!-- CTICM-->
+
+                    <StackPanel x:Name="stackPanel_CTICMMin" Grid.Column="1" Grid.Row="1"  Visibility="Collapsed">
+
+                        <TextBlock Text="Moment de déversement minimum selon CTICM" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+                        <!-- Caractéristique indicatives et statiques-->
+                        <TextBlock Text="Caractéristiques indicative statiques" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur critique de déversement Lcr (indicative)" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_LongueurCritiqueDeversementMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteOMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteEMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- Coefficients C1 et C2-->
+
+                        <TextBlock Text="Coefficients C1 et C2" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rapport des moments d'extrêmité ψ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Rapport du moment isostatique et du moment d'extrêmité maximum μ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient du type de charge C1" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient du positionnement de la charge C2" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RapportMomentExtremiteMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_RapportMomentIsoMomentExtremiteMaxMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_CoefficientTypeChargeC1Min" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_CoefficientPositionnementChargeC2Min" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Moment critique de déversement Mcr" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement réduit λDmoy " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de résuction χD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de déversement MDRd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_MomentCritiqueDeversementMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ElancementReduitMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_FacteurReductionMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_MomentDeversementMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+                    </StackPanel>
+
+
+                    
+                    <!--SIA-->
+
+                    <StackPanel x:Name="stackPanel_SIAMin" Grid.Column="1" Grid.Row="1" Visibility="Collapsed">
+
+                        <TextBlock Text="Moment de déversement minimum selon SIA 263" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+                        <!-- Caractéristique indicatives et statiques-->
+                        <TextBlock Text="Caractéristiques indicative statiques" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur critique de déversement Lcr (indicative)" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de l'extrêmité O de la barre Myo" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_LongueurCritiqueDeversementSIAMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteOSIAMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentExtremiteESIAMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kNm]" />
+                                </TextBlock>
+
+
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- Coefficients η-->
+
+                        <TextBlock Text="Coefficients η" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rapport des moments d'extrêmité ψ" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient η" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RapportMomentExtremiteSIAMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_CoefficientTypeChargeEtaMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment critique de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Rayon de giration de la membrure comprimée iD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte de torsion uniforme σDv " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte de torsion non-uniforme σDw" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte critique de déversement σcrD " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment critique de déversement Mcr " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_RayonGirationMembrureComprimeeMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteTorsionUniformeMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_ContrainteTorsionNonUniformeMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteCritiqueDeversementMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_MomentCritiqueDeversementSIAMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[mm]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[N/mm&#x00B2;]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[N/mm&#x00B2;]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                        <!-- Moment de déversement-->
+
+                        <TextBlock Text="Moment de déversement" Style="{Binding Source={StaticResource SmallTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="7*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Elancement réduit λDmoy " Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de résuction χD" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Moment de déversement MDRd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_ElancementReduitΣΙΑMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_FacteurReductionΣΙΑMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_MomentDeversementΣΙΑMin" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[kNm]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+                    </StackPanel>
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+                <!--#region Interactions Buttons-->
+
+
+                <Grid
+                Style="{Binding Source={StaticResource CenterGrid}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+
+
+
+                    <!-- Affiche le diagramme des efforts internes-->
+                    <StackPanel Grid.Column="0">
+
+                        <Button Content="Afficher Résultats"
+                            x:Name="AfficheMomentDeversement"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="AfficheMomentDeversement_Click"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+
+                        <Button Content="Fermer" 
+                            x:Name="ShutDowmThis"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="ShutDowmThis_Click"/>
+
+                    </StackPanel>
+
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+
+
+
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Border>
+</Window>

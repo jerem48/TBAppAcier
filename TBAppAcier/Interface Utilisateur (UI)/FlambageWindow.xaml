@@ -1,0 +1,429 @@
+﻿<Window x:Class="TBAppAcier.Interface_Utilisateur__UI_.FlambageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TBAppAcier.Interface_Utilisateur__UI_"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Flambage centré" Height="800" Width="1200">
+    <Border  Style="{Binding Source={StaticResource WindowBorder}}">
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+            <StackPanel Style="{Binding Source={StaticResource GlobalStackPanel}}">
+
+                <TextBlock Text="Flambage centré" Style="{Binding Source={StaticResource TitleStyle}}"/>
+
+
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+
+
+
+
+                    <!--#region Liste des profilés disponibles-->
+                    <StackPanel
+                    Grid.Column="0">
+
+
+
+                        <TextBlock Text="Liste des profilés disponibles" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+                        <ListBox  
+                            Style="{Binding Source={StaticResource TitleStyleListBox}}"
+                            x:Name ="ListBox_Profile"
+                            Grid.Column="1"
+                            ScrollViewer.VerticalScrollBarVisibility ="Visible"
+                            SelectionChanged="ListBox_Profile_SelectionChanged"
+                            Height="200"
+                            >
+
+
+
+                        </ListBox>
+
+
+
+
+
+
+
+
+                    </StackPanel>
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+
+
+
+                    <!--#region Résistance au flambage, axe y-->
+
+
+                    <StackPanel Grid.Column="0" Grid.Row="1" x:Name="StackPanelAmeClasse3" Visibility="Visible">
+
+                        <TextBlock Text="Résistance au flambage centré, axe y" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur de flambage y" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte critique σcr,y" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Effort normal critique Ncr,y" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient d'élancement λK,y" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de réduction χK,y" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Résistance au Flambage NKy,Rd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock x:Name="textBox_CoefficientLongueurFlambageY" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteCritiqueY" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_EffortNormalCritiqueY" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_CoeffcientelastiqueY" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_FacteurReductionY" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ResistanceFlambageY" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kN]" />
+                                </TextBlock>
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[kN]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+                    <StackPanel Grid.Row="0" Grid.Column="1">
+
+
+
+                        <TextBlock Text="Caractéristique du profilé" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Résistance" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Type de profilé" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_Resistance" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_TypeProfile" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="" />
+                                </TextBlock>
+
+                                <TextBlock Text="" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+                        <!-- Moments My calculé-->
+
+                        <TextBlock Text="Efforts maximaux en valeur absolue" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Effort normal Ned" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Elancement limite élastique" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_EffortNormal" Style="{Binding Source={StaticResource TextBlockReadOnly}}" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="textBox_ElancementLimiteElastique" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                        <Run Text="[kN]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+                    </StackPanel>
+
+
+
+
+
+
+
+
+                    <!--#region Résistance au flambage, selon z-->
+
+
+                    <StackPanel Grid.Column="1" Grid.Row="1" x:Name="StackPanelAileClasse3" Visibility="Visible">
+
+                        <TextBlock Text="Résistance au flambage centré, axe z" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+
+
+
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel  Grid.Column ="0"   Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="Longueur de flambage z" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Contrainte critique σcr,z" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Effort normal critique Ncr,z" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Coefficient d'élancement λK,z" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Facteur de réduction χK,z" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="Résistance au Flambage NKz,Rd" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Column ="1"  Style="{Binding Source={StaticResource InputStackPanel}}">
+
+                                <TextBlock x:Name="textBox_CoefficientLongueurFlambageZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ContrainteCritiqueZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_EffortNormalCritiqueZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_CoeffcientelastiqueZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+                                <TextBlock x:Name="textBox_FacteurReductionZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}" />
+                                <TextBlock x:Name="textBox_ResistanceFlambageZ" Style="{Binding Source={StaticResource TextBlockReadOnly}}"/>
+
+                            </StackPanel>
+
+                            <StackPanel  Grid.Column ="2"  Style="{Binding Source={StaticResource InputStackPanel}}">
+                                <TextBlock Text="[m]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[N/mm&#x00B2;]" />
+                                </TextBlock>
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}" >                    
+                                    <Run Text="[kN]" />
+                                </TextBlock>
+
+
+                                <TextBlock Style="{Binding Source={StaticResource StyleForTextBlockInput}}">
+                                    <Run Text="[-]" />
+                                </TextBlock>
+
+                                <TextBlock Text="[-]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+                                <TextBlock Text="[kN]" Style="{Binding Source={StaticResource StyleForTextBlockInput}}"/>
+
+
+                            </StackPanel>
+
+
+
+
+
+                        </Grid>
+
+
+
+
+
+
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+                    <!--#region Possiblement diagrammes de contraintes-->
+
+                    <StackPanel Grid.Column="2" x:Name="StackPanel_ContraintesElastiques">
+
+                        <!--
+                                                <TextBlock Text="Diagrammes des contraintes élastiques (Possiblement)" Style="{Binding Source={StaticResource MediumTitleStyle}}"/>
+
+                        -->
+
+
+
+                    </StackPanel>
+
+
+
+
+                    <!--#endregion-->
+
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+                <!--#region Interactions Buttons-->
+
+
+                <Grid
+                Style="{Binding Source={StaticResource CenterGrid}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+
+
+
+                    <!-- Affiche le diagramme des efforts internes-->
+                    <StackPanel Grid.Column="0">
+
+                        <Button Content="Afficher Résultats"
+                            x:Name="AfficheFlambageButton"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="AfficheFlambageButton_Click"/>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+
+                        <Button Content="Fermer" 
+                            x:Name="ShutDowmThis"
+                            Style="{Binding Source={StaticResource InteractionsButtons}}"
+                            Click="ShutDowmThis_Click"/>
+
+                    </StackPanel>
+
+
+                </Grid>
+
+
+                <!--#endregion-->
+
+
+
+
+
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+    </Border>
+</Window>
